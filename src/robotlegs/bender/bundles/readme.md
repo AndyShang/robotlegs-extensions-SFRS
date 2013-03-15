@@ -1,13 +1,12 @@
-# SARS Bundle
+# SFRS Bundle
 
-This bundle installs a number of extensions and configurations for developers who are comfortable with the typical Robotlegs V1 MVCS setup providing ability to create application with combination of Away3D and Starling.
+This bundle installs a number of extensions and configurations for developers who are comfortable with the typical Robotlegs V1 MVCS setup providing ability to create application with combination of Flare3D and Starling.
 
 ## Included Extensions
 
 * LoggingExtension - allows you to inject loggers into clients
 * TraceLoggingExtension - sets up a simple trace log target
-* SARSIntegrationExtension - allows you to inject Starling (with named injection) and Away3D views
-* SARSContextViewExtension - consumes a display object container as the contextView (reimplementation of ContextViewExtension to disallow View3D being mapped as context view)
+* SFRSIntegrationExtension - allows you to inject Starling (with named injection) and Flare3d Scene3D
 * EventDispatcherExtension - makes a shared event dispatcher available
 * ModularityExtension - allows the context to expose and/or inherit dependencies
 * CommandMapExtension - the foundation for other command map extensions
@@ -18,7 +17,7 @@ This bundle installs a number of extensions and configurations for developers wh
 * ManualStageObserverExtension - non-magical view wiring
 * MediatorMapExtension - configures and creates mediators for view components
 * SignalCommandMapExtension - an signal driven command map
-* SARSStageSyncExtension - automatically initialize context when all Starling views and context view gain stage reference.
+* SFRSStageSyncExtension - automatically initialize context when all Starling views and context view gain stage reference.
 
 Note: for more information on these extensions please see the extensions package.
 
@@ -30,7 +29,7 @@ Note: for more information on these extensions please see the extensions package
 
 Example of using bundle:
 
-	context.extend(SARSBundle).configure(view3D, starlingCollection, Config, this);
+	context.extend(SFRSBundle).configure(view3D, starlingCollection, Config, this);
 
 To initialize all extensions in bundle, you would have to provide:
 

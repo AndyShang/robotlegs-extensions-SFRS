@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><!--ant-->
-<project name="SARS" basedir="." default="test">
+<project name="SFRS" basedir="." default="test">
 <!-- set up a prefix for all environment variables -->
   <property environment="env."/>
 <!-- System environment must contain FLEX_HOME variable that points to Flex SDK -->
@@ -54,7 +54,7 @@
     <java jar="${FLEX_HOME}/lib/compc.jar" dir="${FLEX_HOME}/frameworks" fork="true" failonerror="true">
 <!-- Build our SWC with a versioned name. -->
       <arg value="-output=${bin.loc}/${project.name.versioned}.swc"/>
-<!-- We want all the SARS package classes in the SWC being built. -->
+<!-- We want all the SFRS package classes in the SWC being built. -->
       <arg value="-include-sources+=${main.src.loc}"/>
 <!-- Include classes from SWCs in this folder, but only the ones we use. -->
       <arg value="-external-library-path+=${lib.loc}"/>
@@ -71,8 +71,8 @@
 <!--       <arg line="-include-file+=manifest.xml,'${main.src.loc}'/manifest.xml" /> -->
 <!--       <arg line="-include-file+=design.xml,'${main.src.loc}'/design.xml" /> -->
 <!--       <arg line="-source-path+='./','${main.src.loc}'"/> -->
-<!--       <arg line="-namespace+=http://ns.robotlegs.com/flex/SARS,'${main.src.loc}'/manifest.xml" /> -->
-<!--       <arg line="-include-namespaces+=http://ns.robotlegs.com/flex/SARS" /> -->
+<!--       <arg line="-namespace+=http://ns.robotlegs.com/flex/SFRS,'${main.src.loc}'/manifest.xml" /> -->
+<!--       <arg line="-include-namespaces+=http://ns.robotlegs.com/flex/SFRS" /> -->
     </java>
     <echo>[compile] Release SWC ${project.name.versioned}.swc created successfully</echo>
   </target>
@@ -120,9 +120,9 @@
       <arg line="-output ${doc.loc}"/>
       <arg value="-keep-xml=true"/>
       <arg value="-lenient=true"/>
-      <arg line="-window-title 'SARS ${ver.num}'"/>
-      <arg line="-main-title 'SARS ${ver.num}'"/>
-      <arg line="-footer 'SARS - Documentation generated at: ${docgen.time}'"/>
+      <arg line="-window-title 'SFRS ${ver.num}'"/>
+      <arg line="-main-title 'SFRS ${ver.num}'"/>
+      <arg line="-footer 'SFRS - Documentation generated at: ${docgen.time}'"/>
     </java>
     <echo>[asdoc] ASDOC documentation generated successfully</echo>
   </target>
@@ -138,8 +138,8 @@
     <mkdir dir="${dist.loc}/src"/>
     <mkdir dir="${dist.loc}/libs"/>
     <copy file="${bin.loc}/${project.name.versioned}.swc" todir="${dist.loc}/bin"/>
-    <copy todir="${dist.loc}/src/SARS">
-      <fileset dir="${main.src.loc}/SARS"/>
+    <copy todir="${dist.loc}/src/SFRS">
+      <fileset dir="${main.src.loc}/SFRS"/>
     </copy>
     <copy todir="${dist.loc}/docs">
       <fileset dir="${doc.loc}"/>
@@ -149,7 +149,7 @@
     <zip destfile="${dist.loc}/bin/${project.name.versioned}.swc" update="true">
       <zipfileset dir="${doc.loc}/tempdita" prefix="docs">
         <include name="*packages.dita*"/>
-        <include name="*SARS.*"/>
+        <include name="*SFRS.*"/>
       </zipfileset>
     </zip>
 <!-- Copy README  -->
